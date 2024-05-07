@@ -190,6 +190,24 @@ class ACGenerator(
             builder.endControlFlow() // end control flow of runCatching
             builder.build()
         }
+
+        ACFunction.SayHello -> {
+            // generate fun toJSONObject
+            val name = "SayHello"
+            val receiverType = ClassName(packageName, className)
+            val builder = FunSpec.builder(name)
+                .receiver(receiverType)
+                .returns(
+                    Result::class.asClassName().parameterizedBy(Unit::class.asClassName())
+                )
+
+            // begin control flow of runCatching
+            builder.beginControlFlow("return kotlin.runCatching {")
+            // begin control flow of also
+            builder.addStatement("println(\"Hello\")")
+            builder.endControlFlow() // end control flow of also
+            builder.build()
+        }
     }
 
 }

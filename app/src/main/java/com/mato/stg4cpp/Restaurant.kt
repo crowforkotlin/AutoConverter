@@ -8,7 +8,7 @@ import com.mato.stg4cpp.pkg2.Location
  * @Author sunlulu.tomato
  * @Date 2023/12/31
  */
-@AutoConvert(functions = [ACFunction.FromJSONObject, ACFunction.ToJSONObject])
+@AutoConvert(functions = [ACFunction.FromJSONObject, ACFunction.ToJSONObject, ACFunction.SayHello])
 data class Restaurant(
     val score: Float,
     val comments: Int = 0,

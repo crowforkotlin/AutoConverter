@@ -11,5 +11,6 @@ package com.mato.stg4.annotation
  */
 enum class ACFunction {
     ToJSONObject,
-    FromJSONObject
+    FromJSONObject,
+    SayHello
 }
