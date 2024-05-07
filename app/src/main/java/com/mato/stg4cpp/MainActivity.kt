@@ -19,6 +19,8 @@ class MainActivity : AppCompatActivity() {
 
         val rest = Restaurant(5.0f).toJSONObject()
 
+        rest.getOrNull().toString().info()
+
         runCatching { Restaurant::class.fromJSONObject(rest.getOrNull()!!).info() }
             .onFailure { it.stackTraceToString().info() }
 
@@ -28,6 +30,6 @@ class MainActivity : AppCompatActivity() {
         Restaurant(2.0f).SayHello()
 
         // Example of a call to a native method
-        binding.sampleText.text = rest.toString()
+        binding.sampleText.text = rest.getOrNull().toString()
     }
 }
