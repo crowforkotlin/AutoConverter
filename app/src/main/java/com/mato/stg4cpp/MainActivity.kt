@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        val rest = Restaurant(1.0f).toJSONObject()
+        val rest = Restaurant(5.0f).toJSONObject()
 
         runCatching { Restaurant::class.fromJSONObject(rest.getOrNull()!!).info() }
             .onFailure { it.stackTraceToString().info() }
